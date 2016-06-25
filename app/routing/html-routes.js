@@ -15,22 +15,28 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 app.use(express.static('../public'));
 
+module.exports = function (app) {
 
-app.get('/', function(req, res){
+	app.get('/', function(req, res){
 
-	res.sendFile(path.join(__dirname + '/home.html'));
-})
+		res.sendFile(path.join(__dirname + '/home.html'));
+	})
 
-app.get('/reserve', function(req, res){
+	app.get('/reserve', function(req, res){
 
-	res.sendFile(path.join(__dirname + '/reserve.html'));
-})
+		res.sendFile(path.join(__dirname + '/reserve.html'));
+	})
 
-app.get('/tables', function(req, res){
+	app.get('/tables', function(req, res){
 
-	res.sendFile(path.join(__dirname + '/tables.html'));
-})
+		res.sendFile(path.join(__dirname + '/tables.html'));
+	})
+
+};
+
 
 app.listen(PORT, function(){
 	console.log('App listening on PORT ' + PORT);
 })
+
+

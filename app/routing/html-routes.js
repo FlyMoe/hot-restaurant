@@ -15,7 +15,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 app.use(express.static('../public'));
 
-module.exports = function (app) {
+function routes() {
 
 	app.get('/', function(req, res){
 
@@ -31,12 +31,11 @@ module.exports = function (app) {
 
 		res.sendFile(path.join(__dirname + '/tables.html'));
 	})
-
-};
+}
 
 
 app.listen(PORT, function(){
 	console.log('App listening on PORT ' + PORT);
 })
 
-
+exports.routes = routes();

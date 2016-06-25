@@ -5,6 +5,7 @@ var path = require('path');
 
 
 
+
 module.exports = function (app) {
 
 	//app.use(express.static('../public'));
@@ -22,8 +23,7 @@ module.exports = function (app) {
 
 		res.sendFile(path.join(__dirname + '/../public/tables.html'));
 	})
-
-};
+}
 
 
 
